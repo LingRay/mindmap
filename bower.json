@@ -1,0 +1,22 @@
+{
+  "name": "mind_map",
+  "description": "A Vue.js project",
+  "main": "",
+  "authors": [
+    "LingRay <lingray@vip.qq.com>"
+  ],
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hotbox": "^1.0.14",
+    "kityminder-core": "^1.4.36",
+    "kity": "^2.0.5"
+  }
+}
