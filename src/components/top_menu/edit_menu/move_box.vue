@@ -1,10 +1,10 @@
 <template >
 <div class="move-group ">
-  <div class="mouve-up menu-btn" :disabled="disabled1" @click="ArrangeUp">
+  <div class="move-up menu-btn" :disabled="disabled1" @click="ArrangeUp">
     <i class="tab-icons"></i>
     <span>上移</span>
   </div>
-  <div class="mouve-down menu-btn" :disabled="disabled2" @click="ArrangeDown">
+  <div class="move-down menu-btn" :disabled="disabled2" @click="ArrangeDown">
     <i class="tab-icons"></i>
     <span>下移</span>
   </div>

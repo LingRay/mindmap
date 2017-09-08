@@ -3,7 +3,7 @@
 > A Vue.js project
 
 ## Build Setup
-### 推荐使用yarn
+### 推荐使用[yarn](https://yarnpkg.com)
 ```bash
 npm i -g yarn
 ```

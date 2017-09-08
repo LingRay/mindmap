@@ -1,7 +1,7 @@
 @import 'mixin.scss';
 @import 'dropdown-list.scss';
 header {
-  font-size: 14px;
+  font-size: 12px;
   &>ul {
     display: flex;
     height: 30px;
@@ -50,10 +50,17 @@ header {
   height: 100%;
   .menu-container {
     height: inherit;
+    display: flex;
     &>div {
-      display: inline-block;
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
       overflow: hidden;
       height: 100%;
+      border-right: 1px dashed #eee;
+    }
+    &>div:last-of-type {
+      border-right: none;
     }
   }
   .menu-btn {
@@ -86,30 +93,46 @@ header {
     }
   }
   .insert-group {
-    width: 250px;
-    &>div{
+    width: 230px;
+    &>div {
       height: 50%;
+      margin: 0 5px;
     }
   }
   .edit-del-group,
   .move-group {
     width: 70px;
+    @include flexcenter;
+
   }
   .attachment-group {
     width: 200px;
-    /* border: 1px solid blue; */
+    @include flexcenter;
+    .el-dropdown-link {
+      font-size: 12px;
+    }
     button {
+      font-size: inherit;
       width: 45px;
       height: 20px;
+      background-position: right;
       background-repeat: no-repeat;
       @include button;
+      @include flexcenter;
+      padding: 0;
+      span {
+        margin-left: 15px;
+      }
     }
     button:hover {
       background-color: $btn-hover-color;
     }
     &>div {
+      @include flexcenter;
       width: 60px;
       height: 100%;
+      flex-wrap: wrap;
+      font-size: inherit;
     }
     .insert {
       height: 25px;
@@ -134,10 +157,12 @@ header {
   .progress-group,
   .sequence-group {
     width: 135px;
+    @include flexcenter;
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
+      width: 120px;
       li {
         display: inline-block;
         width: 20px;

@@ -1,6 +1,14 @@
+.link-dropdown-list,
+.img-dropdown-list,
+.remark-dropdown-list{
+    font-size: 12px
+}
+
+
 .mold-dropdown-list {
   width: 126px;
   height: 150px;
+  font-size: 12px;
 
   .mold-icons {
     background-image: url('../assets/mold.png');
@@ -14,6 +22,7 @@
     padding: 0;
     margin: 5px;
   }
+
   @for $i from 1 through 6 {
     .mold-#{$i} {
       background-position: (1-$i)*50px 0;
