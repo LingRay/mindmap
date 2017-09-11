@@ -4,11 +4,11 @@ header {
   font-size: 12px;
   &>ul {
     display: flex;
+    align-items: center;
     height: 30px;
     margin: 0;
     padding: 0;
     background-color: #e1e1e1;
-    align-items: center;
     li {
       line-height: 30px;
       display: inline-flex;
@@ -49,13 +49,13 @@ header {
   width: 100%;
   height: 100%;
   .menu-container {
-    height: inherit;
     display: flex;
+    height: inherit;
     &>div {
       display: inline-flex;
-      flex-wrap: wrap;
-      align-items: center;
       overflow: hidden;
+      align-items: center;
+      flex-wrap: wrap;
       height: 100%;
       border-right: 1px dashed #eee;
     }
@@ -64,9 +64,9 @@ header {
     }
   }
   .menu-btn {
+    display: inline-flex;
     cursor: pointer;
     @include flexcenter;
-    display: inline-flex;
   }
   .menu-btn:not([disabled]):hover {
     background-color: $btn-hover-color;
@@ -98,15 +98,48 @@ header {
       height: 50%;
       margin: 0 5px;
     }
+    .insert-sibling-box {
+      i {
+        background-position: 0 -20px;
+      }
+    }
+    .insert-parent-box {
+      i {
+        background-position: 0 -40px;
+      }
+    }
   }
   .edit-del-group,
   .move-group {
     width: 70px;
     @include flexcenter;
-
+  }
+  .move-group {
+    .move-up {
+      i {
+        background-position: 0 -280px;
+      }
+    }
+    .move-down {
+      i {
+        background-position: 0 -300px;
+      }
+    }
+  }
+  .edit-del-group {
+    .edit {
+      i {
+        background-position: 0 -60px;
+      }
+    }
+    .del {
+      i {
+        background-position: 0 -80px;
+      }
+    }
   }
   .attachment-group {
-    width: 200px;
+    width: 185px;
     @include flexcenter;
     .el-dropdown-link {
       font-size: 12px;
@@ -115,11 +148,11 @@ header {
       font-size: inherit;
       width: 45px;
       height: 20px;
-      background-position: right;
+      padding: 0;
       background-repeat: no-repeat;
+      background-position: right;
       @include button;
       @include flexcenter;
-      padding: 0;
       span {
         margin-left: 15px;
       }
@@ -128,11 +161,11 @@ header {
       background-color: $btn-hover-color;
     }
     &>div {
-      @include flexcenter;
+      font-size: inherit;
+      flex-wrap: wrap;
       width: 60px;
       height: 100%;
-      flex-wrap: wrap;
-      font-size: inherit;
+      @include flexcenter;
     }
     .insert {
       height: 25px;
@@ -150,8 +183,11 @@ header {
     }
     .remark {
       .insert {
-        background-position: 50% -150px;
+        background-position: 50% -1150px;
       }
+    }
+    .el-dropdown{
+      cursor: default;
     }
   }
   .progress-group,
@@ -159,10 +195,10 @@ header {
     width: 135px;
     @include flexcenter;
     ul {
+      width: 120px;
       margin: 0;
       padding: 0;
       list-style: none;
-      width: 120px;
       li {
         display: inline-block;
         width: 20px;
@@ -193,6 +229,7 @@ header {
   }
   .label-group {
     width: 200px;
+    margin: 0 5px;
     i {
       width: 30px;
       height: 30px;
@@ -210,6 +247,7 @@ header {
   }
   .mold-group {
     width: 80px;
+    @include flexcenter;
     .mold-icons {
       background-image: url('../assets/mold.png');
       background-repeat: no-repeat;
@@ -229,13 +267,14 @@ header {
         @include block;
         i {
           position: absolute;
-          right: 10px;
+          right: -20px;
           bottom: -5px;
         }
       }
     }
   }
   .theme-group {
+    font-size: 12px;
     width: 100px;
     a {
       display: inline-block;
@@ -248,6 +287,7 @@ header {
       height: 50px;
       margin: 6px auto;
       span {
+        font-size: 12px;
         display: inline-block;
         @include block;
       }
@@ -260,30 +300,36 @@ header {
   }
   .arrange-group {
     width: 65px;
+    .arrange {
+      flex-wrap: wrap;
+      @include flexcenter;
+    }
     .tab-icons {
       display: inline-block;
       width: 25px;
       height: 25px;
-      margin: 0 0 0 20px;
+      margin: 0;
       background-repeat: no-repeat;
       background-position: 0 -150px;
     }
   }
   .style-group {
-    width: 250px;
+    width: 150px;
     .clear-style-btn {
+      flex-wrap: wrap;
       width: 65px;
+      @include flexcenter;
       .tab-icons {
         display: inline-block;
         width: 25px;
         height: 25px;
-        margin: 0 0 0 20px;
+        margin: 0;
         background-repeat: no-repeat;
         background-position: 0 -175px;
       }
     }
     .copy-paste-panel {
-      width: 100px;
+      width: 70px;
       .tab-icons {
         display: inline-block;
         width: 20px;
@@ -302,10 +348,12 @@ header {
     }
   }
   .font-group {
-    /* overflow: hidden; */
     width: 250px;
+    * {
+      font-size: 12px;
+    }
     input {
-      height: 30px;
+      height: 25px;
     }
     .font-family-select {
       input {
@@ -329,8 +377,20 @@ header {
       background-position: 0 -260px;
     }
   }
-  .expand-group {
+  .expand-group,
+  .selection-group {
     width: 60px;
+    button {
+      border: none;
+      outline: none;
+    }
+    @include flexcenter;
+    margin: 0 5px;
+    span{
+      font-size: 12px;
+    }
+  }
+  .expand-group {
     .expand {
       width: 40px;
       height: 25px;
@@ -341,7 +401,6 @@ header {
     }
   }
   .selection-group {
-    width: 60px;
     .selection {
       width: 40px;
       height: 25px;
